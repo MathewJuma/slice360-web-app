@@ -54,7 +54,6 @@ class User extends Authenticatable
         return $this->hasOne(UserProfile::class , 'user_id'); //each user has one user profile
     }
 
-
     //defines a relationship between a users and opportunities
     public function user_opportunities()
     {

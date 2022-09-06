@@ -51,9 +51,8 @@ class User extends Authenticatable
     //defines the relationship between a user and a profile
     public function user_profile()
     {
-        return $this->hasOne(UserProfile::class , 'user_id'); //each user has one user profile
+        return $this->hasOne(UserProfile::class , 'user_id');
     }
-
 
     //defines a relationship between a users and opportunities
     public function user_opportunities()
