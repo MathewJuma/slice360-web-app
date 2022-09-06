@@ -1,0 +1,35 @@
+.form_errors {
+    float: left !important;  margin-top: -15px !important;
+}
+
+/* This is is then flashbox div CSS */
+#fixed-flash-box {
+    position: fixed;
+    width: 500px;  height: 50px;
+    top: 0; left: 50%; padding-top: 5px;
+    margin-top: 10px; /* Negative half of height. */
+    margin-left: -250px; /* Negative half of width. */
+    z-index: 1000;
+}
+
+ol, ul {
+  padding-left: 0rem !important;
+}
+
+.custom_scroll_button {
+  color: #fff;
+  margin-top: 20px;
+  padding: 15px 0;
+  border-radius: 4px;
+  box-shadow: 0 9px 26px rgba(58, 87, 135, 0.15);
+}
+
+.custom_scroll_button:hover{
+  color: #fff !important;
+}
+
+.custom_scroll_fixed {
+    position: fixed;
+    top: 1000;
+    z-index: 999;
+}

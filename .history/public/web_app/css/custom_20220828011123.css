@@ -1,0 +1,29 @@
+.form_errors {
+    float: left !important;  margin-top: -15px !important;
+}
+
+/* This is is then flashbox div CSS */
+#fixed-flash-box {
+    position: fixed;
+    width: 500px;  height: 50px;
+    top: 0; left: 50%; padding-top: 5px;
+    margin-top: 10px; /* Negative half of height. */
+    margin-left: -250px; /* Negative half of width. */
+    z-index: 1000;
+}
+
+ol, ul {
+  padding-left: 0rem !important;
+}
+
+
+.custom_buttons {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
