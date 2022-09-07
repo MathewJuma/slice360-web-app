@@ -20,8 +20,6 @@
             $facebook = $user_profile->facebook ?? "";
             $twitter = $user_profile->twitter ?? "";
             $instagram = $user_profile->instagram ?? "";
-            $profile_image = $user_profile_images->user_profile_image ?? NULL;
-            $profile_banner = $user_profile_images->user_profile_banner ?? NULL;
 
         @endphp
 
@@ -74,7 +72,7 @@
                         </div>
                         <div class="col-sm-6">
                             <label>Second Email Address<i class="fa fa-envelope"></i> </label>
-                            <input type="text" placeholder="Second email address -- optional"  name="second_email" value="{{ old('second_email') ?? $second_email }}" />
+                            <input type="text" placeholder="Second email address -- optional"  name="second_email" value=" {{ old('second_email') ?? $second_email }}" />
                             @error('second_email')
                                 <p class="form_errors text-danger" style="font-size: 11px !important;">{{ $message }}</p>
                             @enderror
@@ -132,14 +130,14 @@
                         </div>
                     </div>
                     <label>Breif Description <i class="fal fa-list"></i></label>
-                    <textarea cols="40" rows="2" name='brief_description' id="brief_description" placeholder="Brief opportunity description"  name="" />{{ old('brief_description') ?? $brief_description }}</textarea>
+                    <textarea cols="40" rows="2" name='brief_description' id="brief_description" placeholder="Brief opportunity description"  name="" />{{ old('brief_description') ?? $user_profile->brief_description }}</textarea>
                     @error('brief_description')
                         <p class="form_errors text-danger" style="font-size: 11px !important;" style="padding-top: 10px !important;">{{ $message }}</p>
                     @enderror
                     <div class="clearfix"></div>
 
                     {{-- show only if banner and profile images are NULL --}}
-                    @if ($profile_image === NULL && $profile_banner === NULL)
+                    @if ($user_profile_images->user_profile_banner === NULL && $user_profile_images->user_profile_image === NULL)
                         <div class="row" style="margin-top: 30px !important;">
 
                             <!--col :: profile image-->
@@ -207,8 +205,8 @@
                     <div class="col-md-12">
                         <label>Website <i class="fa fa-globe"></i></label>
                         <div class="general-input-item">
-                            <input type="text" placeholder="https://www.domain.com/ -- optional" name="website" value="{{ old('website') ?? $website }}"/>
-                            @error('website')
+                            <input type="text" placeholder="https://www.domain.com/ -- optional" name="webiste" value="{{ old('website') ?? $user_profile->website }}"/>
+                            @error('webiste')
                                 <p class="form_errors text-danger" style="font-size: 11px !important;">{{ $message }}</p>
                             @enderror
                         </div>
@@ -219,7 +217,7 @@
                     <div class="col-md-12">
                         <label>Facebook <i class="fa fa-facebook"></i></label>
                         <div class="general-input-item">
-                            <input type="text" placeholder="https://www.facebook.com/ -- optional" name="facebook" value="{{ old('facebook') ?? $facebook }}"/>
+                            <input type="text" placeholder="https://www.facebook.com/ -- optional" name="facebook" value="{{ old('facebook') ?? $user_profile->facebook }}"/>
                             @error('facebook')
                                 <p class="form_errors text-danger" style="font-size: 11px !important;">{{ $message }}</p>
                             @enderror
@@ -230,7 +228,7 @@
                     <div class="col-md-12">
                         <label>Twitter<i class="fa fa-twitter"></i>  </label>
                         <div class="general-input-item">
-                            <input type="text" placeholder="https://twitter.com/ -- optional" name="twitter" value="{{ old('twitter') ?? $twitter }}"/>
+                            <input type="text" placeholder="https://twitter.com/ -- optional" name="twitter" value="{{ old('twitter') ?? $user_profile->twitter }}"/>
                             @error('twitter')
                                 <p class="form_errors text-danger" style="font-size: 11px !important;">{{ $message }}</p>
                             @enderror
@@ -241,7 +239,7 @@
                     <div class="col-md-12">
                         <label>Instagram <i class="fa fa-instagram"></i></label>
                         <div class="general-input-item">
-                            <input type="text" placeholder="https://www.instagram.com/ -- optional" name="instagram" value="{{ old('instagram') ?? $instagram }}"/>
+                            <input type="text" placeholder="https://www.instagram.com/ -- optional" name="instagram" value="{{ old('instagram') ?? $user_profile->instagram }}"/>
                             @error('instagram')
                                 <p class="form_errors text-danger" style="font-size: 11px !important;">{{ $message }}</p>
                             @enderror

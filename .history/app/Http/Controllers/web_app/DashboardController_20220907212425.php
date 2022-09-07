@@ -142,7 +142,7 @@ class DashboardController extends Controller
         $user_details->phone = $request_data['phone'];
         $user_details->save();
 
-        //4. prepare user profile data
+        //create user profile data
         $user_profile_data = [
             'second_email' => $request_data['second_email'],
             'second_phone' => $request_data['second_phone'],
@@ -157,17 +157,18 @@ class DashboardController extends Controller
             'instagram' => $request_data['instagram']
         ];
 
-        //5. check if this user profile already exists
+        //4. check if this user profile already exists
         $user_profile = UserProfile::where('user_id', $user->id)->first();
 
+        //5. map and create or update user profile data
         if ($user_profile) {
 
-            $user_profile->update($user_profile_data); //update existing profile record
+            $user_profile->update($user_profile_data); //update record
         }
         else {
 
             $user_profile_data['user_id'] = $user->id;
-            $new_user_profile = UserProfile::create($user_profile_data); //create a new profile record
+            $new_user_profile = UserProfile::create($user_profile_data);
 
         }
 

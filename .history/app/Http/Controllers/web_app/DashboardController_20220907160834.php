@@ -102,18 +102,9 @@ class DashboardController extends Controller
 
         //return the first user record
         $user_details = User::whereIn('id', $user)->with(['user_profile'])->first();
+        $user_profile_images = UserProfile::whereIn('id', $user_details->user_profile)->with(['user_profile_banner', 'user_profile_image'])->first();
 
-
-        //process if the user has a profile
-        if($user_details->user_profile !== NULL){
-
-            $user_profile_images = UserProfile::whereIn('id', $user_details->user_profile)->with(['user_profile_banner', 'user_profile_image'])->first();
-
-        } else {
-
-            $user_profile_images = [];
-
-        }
+        //dd($user_profile_images);
 
         //return edit user profile view
         return view('web-app.dashboard.edit_user_profile', compact(['all_countries', 'all_categories', 'user_details', 'user_profile_images']));
@@ -123,6 +114,8 @@ class DashboardController extends Controller
     //this function is used to update an opportunity record into the DB
     public function updateUserProfile(Request $request, User $user)
     {
+        //dd($request); //exit();
+
         //1. ensure that users can only update their profile
         if($user->id !== auth()->id()){
             abort(403, 'Unathourized update action');
@@ -131,46 +124,13 @@ class DashboardController extends Controller
         //2. validate incoming request data
         $request_data = $this->validateData($request, 'validate_edit_profile');
 
-        //dd($request_data);
-
         //3. map and update main user data
         $user_details = $user;
-        $user_details->first_name = $request_data['first_name'];
-        $user_details->middle_name = $request_data['middle_name'];
-        $user_details->last_name = $request_data['last_name'];
-        $user_details->email = $request_data['email'];
-        $user_details->phone = $request_data['phone'];
-        $user_details->save();
 
-        //4. prepare user profile data
-        $user_profile_data = [
-            'second_email' => $request_data['second_email'],
-            'second_phone' => $request_data['second_phone'],
-            'first_address' => $request_data['first_address'],
-            'second_address' => $request_data['second_address'],
-            'city' => $request_data['city'],
-            'country_id' => $request_data['country_id'],
-            'brief_description' => $request_data['brief_description'],
-            'website_url' => $request_data['website'],
-            'facebook' => $request_data['facebook'],
-            'twitter' => $request_data['twitter'],
-            'instagram' => $request_data['instagram']
-        ];
+        //4. map and update user profile data
+        $user_profile = $user->user_profile;
 
-        //5. check if this user profile already exists
-        $user_profile = UserProfile::where('user_id', $user->id)->first();
-
-        if ($user_profile) {
-
-            $user_profile->update($user_profile_data); //update existing profile record
-        }
-        else {
-
-            $user_profile_data['user_id'] = $user->id;
-            $new_user_profile = UserProfile::create($user_profile_data); //create a new profile record
-
-        }
-
+        dd($user_details);
 
         //5. redirect to edited listing with message
         return redirect('/dashboard/user_profile/' . $user->id.'-'.Str::slug($user->first_name.' '.$user->last_name))->with('message', 'User profile updated successfully');
@@ -190,8 +150,6 @@ class DashboardController extends Controller
                     'last_name' => ['required', 'string', 'min:2', 'max:15'],
                     'email' => ['required', 'email'],
                     'second_email' => ['nullable', 'email'],
-                    'first_address' => ['nullable', 'string', 'min:2', 'max:15'],
-                    'second_address' => ['nullable', 'string', 'min:2', 'max:15'],
                     'phone' => ['required', 'string', 'min:5', 'max:20'],
                     'second_phone' => ['nullable', 'string', 'min:5', 'max:20'],
                     'country_id' => ['required'],

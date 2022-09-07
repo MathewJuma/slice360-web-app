@@ -7,21 +7,6 @@
         @php
             //this is the user profile details
             $user_profile = $user_details->user_profile;
-            $second_email = $user_profile->second_email ?? "";
-            $second_phone = $user_profile->second_phone ?? "";
-            $third_phone = $user_profile->third_phone ?? "";
-            $first_address = $user_profile->first_address ?? "";
-            $second_address = $user_profile->second_address ?? "";
-            $city = $user_profile->city ?? "";
-            $country_id = $user_profile->country_id ?? "";
-            $brief_description = $user_profile->brief_description ?? "";
-            $website = $user_profile->website_url ?? "";
-            $youtube = $user_profile->youtube_link ?? "";
-            $facebook = $user_profile->facebook ?? "";
-            $twitter = $user_profile->twitter ?? "";
-            $instagram = $user_profile->instagram ?? "";
-            $profile_image = $user_profile_images->user_profile_image ?? NULL;
-            $profile_banner = $user_profile_images->user_profile_banner ?? NULL;
 
         @endphp
 
@@ -74,7 +59,7 @@
                         </div>
                         <div class="col-sm-6">
                             <label>Second Email Address<i class="fa fa-envelope"></i> </label>
-                            <input type="text" placeholder="Second email address -- optional"  name="second_email" value="{{ old('second_email') ?? $second_email }}" />
+                            <input type="text" placeholder="Second email address -- optional"  name="second_email" value="{{ $user_profile->second_email != NULL ?  old('second_email') : $user_profile->second_email }}" />
                             @error('second_email')
                                 <p class="form_errors text-danger" style="font-size: 11px !important;">{{ $message }}</p>
                             @enderror
@@ -88,28 +73,28 @@
                         </div>
                         <div class="col-sm-6">
                             <label>Second Phone<i class="fa fa-phone"></i> </label>
-                            <input type="text" placeholder="Second phone -- optional"  name="second_phone" value="{{ old('second_phone') ?? $second_phone }}" />
+                            <input type="text" placeholder="Second phone -- optional"  name="second_phone" value="{{ old('second_phone') ?? $user_profile->second_phone }}" />
                             @error('second_phone')
                                 <p class="form_errors text-danger" style="font-size: 11px !important;">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="col-sm-6">
                             <label> Address <i class="fas fa-map-marker"></i> </label>
-                            <input type="text" placeholder="Enter first address"  name="first_address" value="{{ old('first_address') ?? $first_address }}" />
+                            <input type="text" placeholder="Enter first address"  name="first_address" value="{{ old('first_address') ?? $user_profile->first_address  }}" />
                             @error('first_address')
                                 <p class="form_errors text-danger" style="font-size: 11px !important;">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="col-sm-6">
                             <label> Second Address <i class="fas fa-map-marker"></i> </label>
-                            <input type="text" placeholder="Second address -- optional"  name="second_address" value="{{ old('second_address') ?? $second_address  }}" />
+                            <input type="text" placeholder="Second address -- optional"  name="second_address" value="{{ old('second_address') ?? $user_profile->second_address  }}" />
                             @error('second_address')
                                 <p class="form_errors text-danger" style="font-size: 11px !important;">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="col-sm-6">
                             <label> City <i class="fa fa-globe"></i> </label>
-                            <input type="text" placeholder="Name of city"  name="city" value="{{ old('city') ?? $city }}" />
+                            <input type="text" placeholder="Name of city"  name="city" value="{{ old('city') ?? $user_profile->city }}" />
                             @error('city')
                                 <p class="form_errors text-danger" style="font-size: 11px !important;">{{ $message }}</p>
                             @enderror
@@ -121,7 +106,7 @@
                                     <option value="" >Select Country</option>
                                     {{-- loop through countries for DB --}}
                                     @foreach ($all_countries as $country)
-                                        <option value="{{ $country->id }}" {{ $country->id == $country_id ? "selected" : "" }} >{{ $country->name }}</option>
+                                        <option value="{{ $country->id }}" {{ $country->id == $user_profile->country_id ? "selected" : "" }} >{{ $country->name }}</option>
                                     @endforeach
                                     {{-- loop through countries for DB end --}}
                                 </select>
@@ -132,14 +117,14 @@
                         </div>
                     </div>
                     <label>Breif Description <i class="fal fa-list"></i></label>
-                    <textarea cols="40" rows="2" name='brief_description' id="brief_description" placeholder="Brief opportunity description"  name="" />{{ old('brief_description') ?? $brief_description }}</textarea>
+                    <textarea cols="40" rows="2" name='brief_description' id="brief_description" placeholder="Brief opportunity description"  name="" />{{ old('brief_description') ?? $user_profile->brief_description }}</textarea>
                     @error('brief_description')
                         <p class="form_errors text-danger" style="font-size: 11px !important;" style="padding-top: 10px !important;">{{ $message }}</p>
                     @enderror
                     <div class="clearfix"></div>
 
                     {{-- show only if banner and profile images are NULL --}}
-                    @if ($profile_image === NULL && $profile_banner === NULL)
+                    @if ($user_profile_images->user_profile_banner === NULL && $user_profile_images->user_profile_image === NULL)
                         <div class="row" style="margin-top: 30px !important;">
 
                             <!--col :: profile image-->
@@ -207,8 +192,8 @@
                     <div class="col-md-12">
                         <label>Website <i class="fa fa-globe"></i></label>
                         <div class="general-input-item">
-                            <input type="text" placeholder="https://www.domain.com/ -- optional" name="website" value="{{ old('website') ?? $website }}"/>
-                            @error('website')
+                            <input type="text" placeholder="https://www.domain.com/ -- optional" name="webiste" value="{{ old('website') ?? $user_profile->website }}"/>
+                            @error('webiste')
                                 <p class="form_errors text-danger" style="font-size: 11px !important;">{{ $message }}</p>
                             @enderror
                         </div>
@@ -219,7 +204,7 @@
                     <div class="col-md-12">
                         <label>Facebook <i class="fa fa-facebook"></i></label>
                         <div class="general-input-item">
-                            <input type="text" placeholder="https://www.facebook.com/ -- optional" name="facebook" value="{{ old('facebook') ?? $facebook }}"/>
+                            <input type="text" placeholder="https://www.facebook.com/ -- optional" name="facebook" value="{{ old('facebook') ?? $user_profile->facebook }}"/>
                             @error('facebook')
                                 <p class="form_errors text-danger" style="font-size: 11px !important;">{{ $message }}</p>
                             @enderror
@@ -230,7 +215,7 @@
                     <div class="col-md-12">
                         <label>Twitter<i class="fa fa-twitter"></i>  </label>
                         <div class="general-input-item">
-                            <input type="text" placeholder="https://twitter.com/ -- optional" name="twitter" value="{{ old('twitter') ?? $twitter }}"/>
+                            <input type="text" placeholder="https://twitter.com/ -- optional" name="twitter" value="{{ old('twitter') ?? $user_profile->twitter }}"/>
                             @error('twitter')
                                 <p class="form_errors text-danger" style="font-size: 11px !important;">{{ $message }}</p>
                             @enderror
@@ -241,7 +226,7 @@
                     <div class="col-md-12">
                         <label>Instagram <i class="fa fa-instagram"></i></label>
                         <div class="general-input-item">
-                            <input type="text" placeholder="https://www.instagram.com/ -- optional" name="instagram" value="{{ old('instagram') ?? $instagram }}"/>
+                            <input type="text" placeholder="https://www.instagram.com/ -- optional" name="instagram" value="{{ old('instagram') ?? $user_profile->instagram }}"/>
                             @error('instagram')
                                 <p class="form_errors text-danger" style="font-size: 11px !important;">{{ $message }}</p>
                             @enderror

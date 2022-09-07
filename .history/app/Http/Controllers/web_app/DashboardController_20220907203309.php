@@ -131,46 +131,29 @@ class DashboardController extends Controller
         //2. validate incoming request data
         $request_data = $this->validateData($request, 'validate_edit_profile');
 
-        //dd($request_data);
-
         //3. map and update main user data
         $user_details = $user;
         $user_details->first_name = $request_data['first_name'];
-        $user_details->middle_name = $request_data['middle_name'];
-        $user_details->last_name = $request_data['last_name'];
-        $user_details->email = $request_data['email'];
-        $user_details->phone = $request_data['phone'];
+        $user_details->middle_name = $request_data->middle_name;
+        $user_details->last_name = $request_data->last_name;
+        $user_details->email = $request_data->email;
+        $user_details->phone = $request_data->phone;
         $user_details->save();
 
-        //4. prepare user profile data
-        $user_profile_data = [
-            'second_email' => $request_data['second_email'],
-            'second_phone' => $request_data['second_phone'],
-            'first_address' => $request_data['first_address'],
-            'second_address' => $request_data['second_address'],
-            'city' => $request_data['city'],
-            'country_id' => $request_data['country_id'],
-            'brief_description' => $request_data['brief_description'],
-            'website_url' => $request_data['website'],
-            'facebook' => $request_data['facebook'],
-            'twitter' => $request_data['twitter'],
-            'instagram' => $request_data['instagram']
-        ];
-
-        //5. check if this user profile already exists
-        $user_profile = UserProfile::where('user_id', $user->id)->first();
-
-        if ($user_profile) {
-
-            $user_profile->update($user_profile_data); //update existing profile record
-        }
-        else {
-
-            $user_profile_data['user_id'] = $user->id;
-            $new_user_profile = UserProfile::create($user_profile_data); //create a new profile record
-
-        }
-
+        //4. map and update user profile data
+        $user_profile = $user->user_profile;
+        $user_profile->second_email = $request_data->second_email;
+        $user_profile->second_phone = $request_data->second_phone;
+        $user_profile->first_address = $request_data->first_address;
+        $user_profile->second_address = $request_data->second_address;
+        $user_profile->city = $request_data->city;
+        $user_profile->country_id = $request_data->country_id;
+        $user_profile->brief_description = $request_data->brief_description;
+        $user_profile->website_url = $request_data->webiste;
+        $user_profile->facebook = $request_data->facebook;
+        $user_profile->twitter = $request_data->twitter;
+        $user_profile->instagram = $request_data->instagram;
+        $user_profile->save();
 
         //5. redirect to edited listing with message
         return redirect('/dashboard/user_profile/' . $user->id.'-'.Str::slug($user->first_name.' '.$user->last_name))->with('message', 'User profile updated successfully');
@@ -190,8 +173,6 @@ class DashboardController extends Controller
                     'last_name' => ['required', 'string', 'min:2', 'max:15'],
                     'email' => ['required', 'email'],
                     'second_email' => ['nullable', 'email'],
-                    'first_address' => ['nullable', 'string', 'min:2', 'max:15'],
-                    'second_address' => ['nullable', 'string', 'min:2', 'max:15'],
                     'phone' => ['required', 'string', 'min:5', 'max:20'],
                     'second_phone' => ['nullable', 'string', 'min:5', 'max:20'],
                     'country_id' => ['required'],

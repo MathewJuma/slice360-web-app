@@ -142,32 +142,18 @@ class DashboardController extends Controller
         $user_details->phone = $request_data['phone'];
         $user_details->save();
 
-        //4. prepare user profile data
-        $user_profile_data = [
-            'second_email' => $request_data['second_email'],
-            'second_phone' => $request_data['second_phone'],
-            'first_address' => $request_data['first_address'],
-            'second_address' => $request_data['second_address'],
-            'city' => $request_data['city'],
-            'country_id' => $request_data['country_id'],
-            'brief_description' => $request_data['brief_description'],
-            'website_url' => $request_data['website'],
-            'facebook' => $request_data['facebook'],
-            'twitter' => $request_data['twitter'],
-            'instagram' => $request_data['instagram']
-        ];
+        //4. check if this user profile already exists
+        $user_profile_check = UserProfile::where('user_id', $user->id)->first();
 
-        //5. check if this user profile already exists
-        $user_profile = UserProfile::where('user_id', $user->id)->first();
+        //5. map and create or update user profile data
+        if ($user_profile_check) {
 
-        if ($user_profile) {
+            $user_profile->update(); //update record
 
-            $user_profile->update($user_profile_data); //update existing profile record
         }
         else {
 
-            $user_profile_data['user_id'] = $user->id;
-            $new_user_profile = UserProfile::create($user_profile_data); //create a new profile record
+            $user_profile->save(); //create record
 
         }
 

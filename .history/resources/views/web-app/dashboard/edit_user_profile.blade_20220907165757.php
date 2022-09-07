@@ -74,7 +74,7 @@
                         </div>
                         <div class="col-sm-6">
                             <label>Second Email Address<i class="fa fa-envelope"></i> </label>
-                            <input type="text" placeholder="Second email address -- optional"  name="second_email" value="{{ old('second_email') ?? $second_email }}" />
+                            <input type="text" placeholder="Second email address -- optional"  name="second_email" value=" {{ old('second_email') ?? $second_email }}" />
                             @error('second_email')
                                 <p class="form_errors text-danger" style="font-size: 11px !important;">{{ $message }}</p>
                             @enderror
@@ -207,8 +207,8 @@
                     <div class="col-md-12">
                         <label>Website <i class="fa fa-globe"></i></label>
                         <div class="general-input-item">
-                            <input type="text" placeholder="https://www.domain.com/ -- optional" name="website" value="{{ old('website') ?? $website }}"/>
-                            @error('website')
+                            <input type="text" placeholder="https://www.domain.com/ -- optional" name="webiste" value="{{ old('website') ?? $website }}"/>
+                            @error('webiste')
                                 <p class="form_errors text-danger" style="font-size: 11px !important;">{{ $message }}</p>
                             @enderror
                         </div>
