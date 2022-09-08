@@ -36,7 +36,7 @@
                             </select>
                         </div>
                         @error('country_id')
-                            <p class="form_errors text-danger" style="padding-top: 10px !important;">{{ $message }}</p>
+                            <p class="form_errors-select text-danger" style="padding-top: 10px !important;">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="col-md-6">
@@ -61,7 +61,7 @@
                             </select>
                         </div>
                         @error('category_id')
-                            <p class="form_errors text-danger" style="padding-top: 10px !important;">{{ $message }}</p>
+                            <p class="form_errors-select text-danger" style="padding-top: 10px !important;">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="col-md-6">
@@ -101,10 +101,9 @@
                         <label>Detailed Description</label>
                         <div class="general-input-item">
                             <textarea cols="40" rows="3" name='detailed_description' id="detailed_description" placeholder="Datails opportunity description"  name="" />{{ old('detailed_description') ?? $opportunity_details->detailed_description }}</textarea>
-
                         </div>
                         @error('detailed_description')
-                            <p class="form_errors text-danger" style="padding-top: 10px !important;">{{ $message }}</p>
+                            <p class="form_errors-tinymice text-danger" style="padding-top: 10px !important;">{{ $message }}</p>
                         @enderror
                     </div>
                 </div>
@@ -141,7 +140,7 @@
                             </select>
                         </div>
                         @error('currency')
-                            <p class="form_errors text-danger" style="padding-top: 10px !important;">{{ $message }}</p>
+                            <p class="form_errors-select text-danger" style="padding-top: 10px !important;">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="col-sm-4">

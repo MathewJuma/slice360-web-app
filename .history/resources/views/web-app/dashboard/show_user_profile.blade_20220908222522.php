@@ -217,17 +217,10 @@ $instagram = $user_profile->instagram ?? '';
                                                 href="user-single.html">{{ $user_details->first_name . ' ' . $user_details->last_name }}</a>
                                             <span>{{ $user_opportunities->total() }} Opportunities Posted</span>
                                         </div>
-
-                                        {{-- only show if user is logged in --}}
-                                        @if(Auth::check())
-                                            <div class="box-widget-author-title_opt">
-                                                <a href="#" class="tolt color-bg cwb" data-microtip-position="top" data-tooltip="Chat With {{ $user_details->first_name }}">
-                                                <i class="fas fa-comments-alt"></i>
-                                                </a>
-                                            </div>
-                                        @endif
-                                        {{-- only show if user is logged in end--}}
-
+                                        <div class="box-widget-author-title_opt">
+                                            <a href="#" class="tolt color-bg cwb" data-microtip-position="top"
+                                                data-tooltip="Chat With {{ $user_details->first_name }}"><i class="fas fa-comments-alt"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -348,7 +341,7 @@ $instagram = $user_profile->instagram ?? '';
     {{-- this section loads the user profile end --}}
 
     {{-- only show if user is logged in --}}
-    @if(Auth::check())
+    @if(auth())
         {{-- user chat box --}}
         <div class="chat-widget-button cwb tolt" data-microtip-position="left" data-tooltip="Chat With  {{ $user_details->first_name }}">
             <i class="fal fa-comments-alt"></i>

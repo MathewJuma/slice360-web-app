@@ -217,17 +217,10 @@ $instagram = $user_profile->instagram ?? '';
                                                 href="user-single.html">{{ $user_details->first_name . ' ' . $user_details->last_name }}</a>
                                             <span>{{ $user_opportunities->total() }} Opportunities Posted</span>
                                         </div>
-
-                                        {{-- only show if user is logged in --}}
-                                        @if(Auth::check())
-                                            <div class="box-widget-author-title_opt">
-                                                <a href="#" class="tolt color-bg cwb" data-microtip-position="top" data-tooltip="Chat With {{ $user_details->first_name }}">
-                                                <i class="fas fa-comments-alt"></i>
-                                                </a>
-                                            </div>
-                                        @endif
-                                        {{-- only show if user is logged in end--}}
-
+                                        <div class="box-widget-author-title_opt">
+                                            <a href="#" class="tolt color-bg cwb" data-microtip-position="top"
+                                                data-tooltip="Chat With {{ $user_details->first_name }}"><i class="fas fa-comments-alt"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -347,60 +340,55 @@ $instagram = $user_profile->instagram ?? '';
     </section>
     {{-- this section loads the user profile end --}}
 
-    {{-- only show if user is logged in --}}
-    @if(Auth::check())
-        {{-- user chat box --}}
-        <div class="chat-widget-button cwb tolt" data-microtip-position="left" data-tooltip="Chat With  {{ $user_details->first_name }}">
-            <i class="fal fa-comments-alt"></i>
+    {{-- user chat box --}}
+    <div class="chat-widget-button cwb tolt" data-microtip-position="left" data-tooltip="Chat With Owner"><i
+            class="fal fa-comments-alt"></i></div>
+    <div class="chat-widget_wrap not-vis-chat">
+        <div class="chat-widget_header">
+            <div style="margin-top: 18px !important;">
+                <h3>Chat with <a href="author-single.html"> Alisa Noory</a></h3>
+            </div>
+            <div class="status st_online"><span></span>Online</div>
         </div>
-        <div class="chat-widget_wrap not-vis-chat">
-            <div class="chat-widget_header">
-                <div style="margin-top: 18px !important;">
-                    <h3>Chat with <a href="author-single.html">  {{ $user_details->first_name }}</a></h3>
+        <div class="chat-body" data-simplebar>
+            <!-- message-->
+            <div class="chat-message chat-message_guest fl-wrap">
+                <div class="dashboard-message-avatar">
+                    <img src="images/avatar/1.jpg" alt="">
                 </div>
-                <div class="status st_online"><span></span>Online</div>
+                <span class="chat-message-user-name">Jessie</span>
+                <span class="massage-date">25 may 2018 <span>7.51 PM</span></span>
+                <p>Vivamus lobortis vel nibh nec maximus. Donec dolor erat, rutrum ut feugiat sed, ornare vitae nunc.
+                </p>
             </div>
-            <div class="chat-body" data-simplebar>
-                <!-- message-->
-                <div class="chat-message chat-message_guest fl-wrap">
-                    <div class="dashboard-message-avatar">
-                        <img src="images/avatar/1.jpg" alt="">
-                    </div>
-                    <span class="chat-message-user-name">Jessie</span>
-                    <span class="massage-date">25 may 2018 <span>7.51 PM</span></span>
-                    <p>Vivamus lobortis vel nibh nec maximus. Donec dolor erat, rutrum ut feugiat sed, ornare vitae nunc.
-                    </p>
+            <!-- message end-->
+            <!-- message-->
+            <div class="chat-message chat-message_user fl-wrap">
+                <div class="dashboard-message-avatar">
+                    <img src="images/avatar/1.jpg" alt="">
                 </div>
-                <!-- message end-->
-                <!-- message-->
-                <div class="chat-message chat-message_user fl-wrap">
-                    <div class="dashboard-message-avatar">
-                        <img src="images/avatar/1.jpg" alt="">
-                    </div>
-                    <span class="chat-message-user-name">Alica</span>
-                    <span class="massage-date">25 may 2018 <span>7.51 PM</span></span>
-                    <p>Nulla eget erat consequat quam feugiat dapibus eget sed mauris.</p>
-                </div>
-                <!-- message end-->
-                <!-- message-->
-                <div class="chat-message chat-message_guest fl-wrap">
-                    <div class="dashboard-message-avatar">
-                        <img src="images/avatar/1.jpg" alt="">
-                    </div>
-                    <span class="chat-message-user-name">Jessie</span>
-                    <span class="massage-date">25 may 2018 <span>7.51 PM</span></span>
-                    <p>Sed non neque faucibus, condimentum lectus at, accumsan enim. Fusce pretium egestas cursus..</p>
-                </div>
-                <!-- message end-->
+                <span class="chat-message-user-name">Alica</span>
+                <span class="massage-date">25 may 2018 <span>7.51 PM</span></span>
+                <p>Nulla eget erat consequat quam feugiat dapibus eget sed mauris.</p>
             </div>
-            <div class="chat-widget_input fl-wrap">
-                <textarea placeholder="Type Message"></textarea>
-                <button type="submit"><i class="fal fa-paper-plane"></i></button>
+            <!-- message end-->
+            <!-- message-->
+            <div class="chat-message chat-message_guest fl-wrap">
+                <div class="dashboard-message-avatar">
+                    <img src="images/avatar/1.jpg" alt="">
+                </div>
+                <span class="chat-message-user-name">Jessie</span>
+                <span class="massage-date">25 may 2018 <span>7.51 PM</span></span>
+                <p>Sed non neque faucibus, condimentum lectus at, accumsan enim. Fusce pretium egestas cursus..</p>
             </div>
+            <!-- message end-->
         </div>
-        {{-- user chat box end --}}
-    @endif
-    {{-- only show if user is logged in end--}}
+        <div class="chat-widget_input fl-wrap">
+            <textarea placeholder="Type Message"></textarea>
+            <button type="submit"><i class="fal fa-paper-plane"></i></button>
+        </div>
+    </div>
+    {{-- user chat box end --}}
 
 </x-app-general.main-web-app-layout>
 {{-- load the main web-app layout end --}}

@@ -1,7 +1,7 @@
 @props(['all_countries', 'all_categories', 'user_details'])
 
 {{-- load the main web-app layout --}}
-<x-app-general.main-web-app-layout :all_countries='$all_countries' :all_categories='$all_categories' :user_details='$user_details'>
+<x-app-general.main-web-app-layout :all_countries='$all_countries' :all_categories='$all_categories'>
 
     @php
         $current_route_name = Route::currentRouteName();

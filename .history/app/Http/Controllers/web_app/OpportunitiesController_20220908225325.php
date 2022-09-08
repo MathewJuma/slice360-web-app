@@ -7,10 +7,9 @@ use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
-use App\Models\app_general\User;
 use App\Models\app_general\Country;
-
 use App\Models\web_app\Opportunity;
+
 use App\Http\Controllers\Controller;
 use App\Models\app_general\Category;
 use Illuminate\Support\Facades\Auth;
@@ -94,8 +93,11 @@ class OpportunitiesController extends Controller
         $all_categories = $this->all_categories;
         $user_details = User::find(session()->get('system_user_id'));
 
+        dd($user_details);
+        exit();
+
         //return the form for creating a new opportunity
-        return view('web-app.opportunities.create_opportunity', compact(['all_countries', 'all_categories', 'user_details']));
+        return view('web-app.opportunities.create_opportunity', compact(['all_countries', 'all_categories']));
     }
 
 

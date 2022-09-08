@@ -217,7 +217,6 @@ $instagram = $user_profile->instagram ?? '';
                                                 href="user-single.html">{{ $user_details->first_name . ' ' . $user_details->last_name }}</a>
                                             <span>{{ $user_opportunities->total() }} Opportunities Posted</span>
                                         </div>
-
                                         {{-- only show if user is logged in --}}
                                         @if(Auth::check())
                                             <div class="box-widget-author-title_opt">
@@ -227,7 +226,6 @@ $instagram = $user_profile->instagram ?? '';
                                             </div>
                                         @endif
                                         {{-- only show if user is logged in end--}}
-
                                     </div>
                                 </div>
                             </div>

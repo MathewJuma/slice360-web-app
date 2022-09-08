@@ -217,17 +217,10 @@ $instagram = $user_profile->instagram ?? '';
                                                 href="user-single.html">{{ $user_details->first_name . ' ' . $user_details->last_name }}</a>
                                             <span>{{ $user_opportunities->total() }} Opportunities Posted</span>
                                         </div>
-
-                                        {{-- only show if user is logged in --}}
-                                        @if(Auth::check())
-                                            <div class="box-widget-author-title_opt">
-                                                <a href="#" class="tolt color-bg cwb" data-microtip-position="top" data-tooltip="Chat With {{ $user_details->first_name }}">
-                                                <i class="fas fa-comments-alt"></i>
-                                                </a>
-                                            </div>
-                                        @endif
-                                        {{-- only show if user is logged in end--}}
-
+                                        <div class="box-widget-author-title_opt">
+                                            <a href="#" class="tolt color-bg cwb" data-microtip-position="top"
+                                                data-tooltip="Chat With {{ $user_details->first_name }}"><i class="fas fa-comments-alt"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

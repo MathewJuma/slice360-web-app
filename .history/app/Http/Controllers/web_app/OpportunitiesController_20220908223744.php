@@ -3,17 +3,14 @@
 namespace App\Http\Controllers\web_app;
 
 
-use Illuminate\Support\Str;
-
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
-use App\Models\app_general\User;
-use App\Models\app_general\Country;
 
-use App\Models\web_app\Opportunity;
-use App\Http\Controllers\Controller;
+use Illuminate\Support\Carbon;
+use App\Models\app_general\Country;
 use App\Models\app_general\Category;
-use Illuminate\Support\Facades\Auth;
+use App\Models\web_app\Opportunity;
+
+use App\Http\Controllers\Controller;
 use Intervention\Image\Facades\Image;
 
 class OpportunitiesController extends Controller
@@ -81,21 +78,12 @@ class OpportunitiesController extends Controller
     //this function is used to load the form for creating a new opportunity
     public function createOpportunity()
     {
-        //1. ensure that users can only update their posts
-        if(!Auth::check()){
-            abort(403, 'Unathourized create action');
-        }
-
-        //2. session user_id
-        $user_id = session()->get('system_user_id').'-'.Str::slug(session()->get('system_user_name'));
-
-        //2. all countries and categories
+        //1. all countries and categories
         $all_countries = $this->all_countries;
         $all_categories = $this->all_categories;
-        $user_details = User::find(session()->get('system_user_id'));
 
         //return the form for creating a new opportunity
-        return view('web-app.opportunities.create_opportunity', compact(['all_countries', 'all_categories', 'user_details']));
+        return view('web-app.opportunities.create_opportunity', compact(['all_countries', 'all_categories']));
     }
 
 

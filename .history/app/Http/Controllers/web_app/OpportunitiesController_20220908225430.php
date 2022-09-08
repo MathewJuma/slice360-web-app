@@ -95,7 +95,7 @@ class OpportunitiesController extends Controller
         $user_details = User::find(session()->get('system_user_id'));
 
         //return the form for creating a new opportunity
-        return view('web-app.opportunities.create_opportunity', compact(['all_countries', 'all_categories', 'user_details']));
+        return view('web-app.opportunities.create_opportunity', compact(['all_countries', 'all_categories']));
     }
 
 

@@ -36,7 +36,7 @@
                             </select>
                         </div>
                         @error('country_id')
-                            <p class="form_errors text-danger" style="padding-top: 10px !important;">{{ $message }}</p>
+                            <p class="form_errors-select text-danger" style="padding-top: 10px !important;">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="col-md-6">
@@ -61,7 +61,7 @@
                             </select>
                         </div>
                         @error('category_id')
-                            <p class="form_errors text-danger" style="padding-top: 10px !important;">{{ $message }}</p>
+                            <p class="form_errors-select text-danger" style="padding-top: 10px !important;">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="col-md-6">
@@ -141,7 +141,7 @@
                             </select>
                         </div>
                         @error('currency')
-                            <p class="form_errors text-danger" style="padding-top: 10px !important;">{{ $message }}</p>
+                            <p class="form_errors-select text-danger" style="padding-top: 10px !important;">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="col-sm-4">
