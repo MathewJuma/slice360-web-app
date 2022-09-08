@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         //create user
         //User::factory(2)->create();
         User::factory()->create(['first_name' => 'Mathew', 'last_name' => 'Juma', 'username' => 'MJuma', 'email' => 'athias85@gmail.com', 'phone'=>'+254727074108', 'password' => bcrypt('123456')]);
-        User::factory()->create(['first_name' => 'Eucabeth', 'last_name' => 'Maneno',  'username' => 'BManeno', 'email' => 'emaneno@gmail.com', 'phone'=>'+254727074109', 'password' => bcrypt('123456')]);
+        User::factory()->create(['first_name' => 'Betty', 'last_name' => 'Maneno',  'username' => 'BManeno', 'email' => 'bmaneno@gmail.com', 'phone'=>'+254727074109', 'password' => bcrypt('123456')]);
         //User::factory()->create(['first_name' => 'Frida', 'last_name' => 'Mukei',  'username' => 'FMukei', 'email' => 'fmukei@gmail.com', 'phone'=>'+254727074110', 'password' => bcrypt('123456')]);
         User::factory()->create(['first_name' => 'Kelly', 'last_name' => 'Makworo',  'username' => 'KMakwaro', 'email' => 'kmakwaro@gmail.com', 'phone'=>'+254727074111', 'password' => bcrypt('123456')]);
         User::factory()->create(['first_name' => 'Lucas', 'last_name' => 'Otieno',  'username' => 'LOtieno', 'email' => 'lotieno@gmail.com', 'phone'=>'+254727074113', 'password' => bcrypt('123456')]);

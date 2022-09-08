@@ -124,9 +124,9 @@ class OpportunityFactory extends Factory
             'open_for_funding' => $open_for_funding,
             'funding_start_date' => $funding_start_date,
             'funding_end_date' => $funding_end_date,
-            'facebook' => 'https://www.facebook.com',
-            'twitter' => 'https://www.twitter.com',
-            'instagram' => 'https://www.instagram.com',
+            'facebook' => 'https//:www.facebook.com',
+            'twitter' => 'https//:www.twitter.com',
+            'instagram' => 'https//:www.instagram.com',
             'status' => rand(0, 1),
         ];
     }
