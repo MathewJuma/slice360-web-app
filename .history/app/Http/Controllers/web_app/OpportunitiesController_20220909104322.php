@@ -222,6 +222,8 @@ class OpportunitiesController extends Controller
         //2. validate incoming request data
         $request_data = $this->validateData($request, 'validate_edit_opportunity');
 
+        dd($request_data);
+
         //3. ensure date format are database ready
         $request_data['pledging_start_date'] = Carbon::createFromFormat('d/m/Y', $request['pledging_start_date'])->format('Y-m-d');
         $request_data['pledging_end_date'] = Carbon::createFromFormat('d/m/Y', $request['pledging_end_date'])->format('Y-m-d');

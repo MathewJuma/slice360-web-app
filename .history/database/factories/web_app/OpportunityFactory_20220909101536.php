@@ -38,7 +38,7 @@ class OpportunityFactory extends Factory
         $verified = [1, 0];
         $verified_keys = array_rand($verified);
         $country_id = rand(1, 3);
-        $currency = (($country_id == 1) ? "Kshs" : (($country_id == 2) ? "Ushs" : (($country_id == 3) ? "Tshs" : "USD")));
+        $currency = (($country_id == 1) ? "Kshs" : ($country_id == 2) ? "Ushs" : ($country_id == 3) ? "Tshs" : "USD");
 
 
         //amounts

@@ -230,7 +230,7 @@ class OpportunitiesController extends Controller
         $opportunity->update($request_data);
 
         //5. redirect to edited listing with message
-        return redirect('/opportunities/' . $opportunity->id.'-'.Str::slug($opportunity->title))->with(['message'=>'Opportunity updated successfully']);
+        return redirect('/opportunities/' . $opportunity->id)->with(['message'=>'Opportunity updated successfully']);
     }
 
 
@@ -277,8 +277,8 @@ class OpportunitiesController extends Controller
                     'amount_needed' => ['required', 'string', 'min:6', 'max:15'],
                     'currency' => ['required'],
                     'target_investors' => ['nullable', 'integer', 'max:1000'],
-                    'pledging_start_date' => ['required', 'string', 'date_format:d/m/Y', 'after_or_equal:today'],
-                    'pledging_end_date' => ['required', 'string', 'date_format:d/m/Y', 'after:funding_start_date'],
+                    'pledging_start_date' => ['required', 'string', 'date', 'date_format:d/m/Y', 'after_or_equal:today'],
+                    'pledging_end_date' => ['required', 'string', 'date', 'date_format:d/m/Y', 'after:funding_start_date'],
                     'youtube_link' => ['nullable', 'url', 'max:250'],
                     'vimeo_link' => ['nullable', 'url', 'max:250'],
                     'facebook' => ['nullable', 'url', 'max:250'],
@@ -292,7 +292,6 @@ class OpportunitiesController extends Controller
                     'title.max' => 'Project title must not be more than 30 characters'
                 ]
             ));
-
         } else if ($process_name == 'validate_edit_opportunity') {
 
             return ($incoming_data->validate(
@@ -308,7 +307,7 @@ class OpportunitiesController extends Controller
                     'currency' => ['required'],
                     'target_investors' => ['nullable', 'integer', 'max:1000'],
                     'pledging_start_date' => ['required', 'string', 'date_format:d/m/Y'],
-                    'pledging_end_date' => ['required', 'string', 'date_format:d/m/Y'],
+                    'pledging_end_date' => ['required', 'string', 'date_format:m/d/Y'],
                     'youtube_link' => ['nullable', 'url', 'max:250'],
                     'vimeo_link' => ['nullable', 'url', 'max:250'],
                     'facebook' => ['nullable', 'url', 'max:250'],

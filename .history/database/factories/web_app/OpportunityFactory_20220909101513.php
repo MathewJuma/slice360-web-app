@@ -38,7 +38,7 @@ class OpportunityFactory extends Factory
         $verified = [1, 0];
         $verified_keys = array_rand($verified);
         $country_id = rand(1, 3);
-        $currency = (($country_id == 1) ? "Kshs" : (($country_id == 2) ? "Ushs" : (($country_id == 3) ? "Tshs" : "USD")));
+        $currency = (($country_id == 1) ? "Kshs" : ($country_id == 2) ? "Ushs" : ($country_id == 3) ? "Tshs" : "USD");
 
 
         //amounts
@@ -109,7 +109,7 @@ class OpportunityFactory extends Factory
             'tags' => $actual_tags,
             'amount_needed' => $amount_needed,
             'amount_raised' => $amount_raised,
-            'currency' => $currency,
+            'currency' => "USD",
             'number_of_investors' => $no_of_investors,
             'target_investors' => $target_investors == 0 ? '' : $target_investors,
             'reviews' => $reviews,
@@ -117,7 +117,7 @@ class OpportunityFactory extends Factory
             'viewed' => $viewed,
             'bookmarked' => rand(10, 300),
             'verified' => $verified[$verified_keys],
-            'country_id' => $country_id,
+            'country_id' => rand(1, 3),
             'city' => $this->faker->city(),
             'website_url' => $this->faker->url(),
             'funding_status' => $actual_status,

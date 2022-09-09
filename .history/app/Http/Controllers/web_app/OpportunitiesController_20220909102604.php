@@ -292,7 +292,6 @@ class OpportunitiesController extends Controller
                     'title.max' => 'Project title must not be more than 30 characters'
                 ]
             ));
-
         } else if ($process_name == 'validate_edit_opportunity') {
 
             return ($incoming_data->validate(

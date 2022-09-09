@@ -230,7 +230,7 @@ class OpportunitiesController extends Controller
         $opportunity->update($request_data);
 
         //5. redirect to edited listing with message
-        return redirect('/opportunities/' . $opportunity->id.'-'.Str::slug($opportunity->title))->with(['message'=>'Opportunity updated successfully']);
+        return redirect('/opportunities/' . $opportunity->id)->with(['message'=>'Opportunity updated successfully']);
     }
 
 
@@ -292,7 +292,6 @@ class OpportunitiesController extends Controller
                     'title.max' => 'Project title must not be more than 30 characters'
                 ]
             ));
-
         } else if ($process_name == 'validate_edit_opportunity') {
 
             return ($incoming_data->validate(
