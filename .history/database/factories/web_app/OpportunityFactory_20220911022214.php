@@ -102,7 +102,7 @@ class OpportunityFactory extends Factory
             'currency' => $currency,
             'number_of_investors' => $no_of_investors,
             'target_investors' => $target_investors == 0 ? '' : $target_investors,
-            'viewed' => 0,
+            'viewed' => $viewed,
             'verified' => $verified[$verified_keys],
             'country_id' => $country_id,
             'city' => $this->faker->city(),
