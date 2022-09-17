@@ -58,7 +58,7 @@ Route::controller(UsersController::class)->name('app-general.users.')->group(fun
 //    Route::get('/index/{user}/', 'mainDashboard')->name('admin-main-dashboard')->middleware('auth');
 //});
 
-Route::controller(AdminController::class)->group(function(){
+Route::controller(AdministratorController::class)->group(function(){
     Route::get('/admin/index/{user}/', 'mainDashboard')->name('admin-main-dashboard')->middleware('auth');
 });
 

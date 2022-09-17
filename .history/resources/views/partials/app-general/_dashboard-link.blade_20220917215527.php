@@ -21,7 +21,7 @@
         <div class="show-lang" style="width: 120px !important; margin-top: 3px !important;  margin-right: 5px !important; border: 0px solid white !important;">
             <span>
 
-                <a href="/admin/index/{{ $user_id }}/" class="dashboard_link {{ ($current_route == "web-app.dashboard.main-dashboard" || in_array($current_route, $dashbaord_routes)) ? 'dashboard-act-link' : '' }}" >
+                <a href="{{ route('web-app.dashboard.main-dashboard', $user_id) }}" class="dashboard_link {{ ($current_route == "web-app.dashboard.main-dashboard" || in_array($current_route, $dashbaord_routes)) ? 'dashboard-act-link' : '' }}" >
                     <i class="fal fa-cog"></i><strong> Dashboard &nbsp;&nbsp;</strong>
                 </a>
 
