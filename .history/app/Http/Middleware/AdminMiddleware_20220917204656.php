@@ -27,7 +27,7 @@ class AdminMiddleware
 
             } else { //user is not admin
 
-                return redirect(route('web-app.opportunities.list-opportunities'))->with('message', 'You have been redirected because of role change');
+                return redirect(route('web-app.opportunities.list-opportunities'));
 
             }
 

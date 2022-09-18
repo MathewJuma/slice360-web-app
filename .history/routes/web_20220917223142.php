@@ -55,8 +55,8 @@ Route::controller(UsersController::class)->name('app-general.users.')->group(fun
  * All app-general.admin. Routes
  * - actual routes for accessing CRUD functionality for administrators
  */
-Route::controller(AdminController::class)->middleware(['auth', 'isAdmin'])->prefix('/admin')->name('admin-app.dashboard.')->group(function () {
-    Route::get('/index/{user}/', 'mainDashboard')->name('admin-main-dashboard');
+Route::controller(AdminController::class)->prefix('/admin')->name('admin-app.dashboard.')->group(function () {
+    //Route::get('/index/{user}/', 'mainDashboard')->name('admin-main-dashboard')->middleware('auth');
 });
 
 

@@ -23,7 +23,7 @@
 
                 @if (Auth::user()->is_admin === 1)
 
-                    <a href="{{ route('admin-app.dashboard.admin-main-dashboard', $user_id) }}" class="dashboard_link {{ ($current_route == "admin-app.dashboard.admin-main-dashboard" || in_array($current_route, $dashbaord_routes)) ? 'dashboard-act-link' : '' }}" >
+                    <a href="{{ route('web-app.dashboard.main-dashboard', $user_id) }}" class="dashboard_link {{ ($current_route == "admin-app.dashboard.admin-main-dashboard" || in_array($current_route, $dashbaord_routes)) ? 'dashboard-act-link' : '' }}" >
                         <i class="fal fa-cog"></i><strong> Dashboard &nbsp;&nbsp;</strong>
                     </a>
 

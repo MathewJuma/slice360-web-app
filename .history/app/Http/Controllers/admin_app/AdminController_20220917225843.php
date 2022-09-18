@@ -39,7 +39,7 @@ class AdminController extends Controller
     public function mainDashboard(User $user)
     {
 
-        //dd($user);
+        dd($user);
         //1. ensure that users can only update their posts
         if($user->id !== auth()->id() && $user->is_admin != 1){
 
@@ -50,12 +50,12 @@ class AdminController extends Controller
         //2. all countries, categories and user_details
         $all_countries = $this->all_countries;
         $all_categories = $this->all_categories;
-        $user_details = $user;
+        //$all_opportunities = $this->all_opportunities;
 
         $all_opportunities = Opportunity::with(['opportunity_country', 'opportunity_category', 'opportunity_banner_images', 'opportunity_other_images'])->latest()->filter(request(['tag', 'interest', 'country_id', 'category_id']))->paginate(9);
 
 
-        //dd($all_opportunities);
+        dd($all_opportunities);
 
         //return main-dashboard view
         return view('admin-app.dashboard.main_dashboard', compact(['all_countries', 'all_categories', 'user_details', 'all_opportunities']));
