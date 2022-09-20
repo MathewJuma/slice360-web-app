@@ -23,11 +23,11 @@ class DatabaseSeeder extends Seeder
         //User::factory(2)->create();
         User::factory()->create(['first_name' => 'Super', 'last_name' => 'Administrator', 'username' => 'SAdmin', 'email' => 'admi@slice360.com', 'is_admin'=>'1', 'phone'=>'+254727074108', 'password' => bcrypt('123456')]);
         User::factory()->create(['first_name' => 'Mathew', 'last_name' => 'Juma', 'username' => 'MJuma', 'email' => 'athias85@gmail.com', 'is_admin'=>'0', 'phone'=>'+254727074108', 'password' => bcrypt('123456')]);
-        User::factory()->create(['first_name' => 'Eucabeth', 'last_name' => 'Maneno',  'username' => 'BManeno', 'email' => 'emaneno@gmail.com', 'is_admin'=>'0', 'phone'=>'+254727074109', 'password' => bcrypt('123456')]);
-        //User::factory()->create(['first_name' => 'Frida', 'last_name' => 'Mukei',  'username' => 'FMukei', 'email' => 'fmukei@gmail.com', 'is_admin'=>'0', 'phone'=>'+254727074110', 'password' => bcrypt('123456')]);
-        User::factory()->create(['first_name' => 'Kelly', 'last_name' => 'Makworo',  'username' => 'KMakworo', 'email' => 'kmakworo@gmail.com', 'is_admin'=>'0', 'phone'=>'+254727074111', 'password' => bcrypt('123456')]);
+        //User::factory()->create(['first_name' => 'Eucabeth', 'last_name' => 'Maneno',  'username' => 'BManeno', 'email' => 'emaneno@gmail.com', 'is_admin'=>'0', 'phone'=>'+254727074109', 'password' => bcrypt('123456')]);
+        User::factory()->create(['first_name' => 'Frida', 'last_name' => 'Mukei',  'username' => 'FMukei', 'email' => 'fmukei@gmail.com', 'is_admin'=>'0', 'phone'=>'+254727074110', 'password' => bcrypt('123456')]);
+        //User::factory()->create(['first_name' => 'Kelly', 'last_name' => 'Makworo',  'username' => 'KMakwaro', 'email' => 'kmakworo@gmail.com', 'is_admin'=>'0', 'phone'=>'+254727074111', 'password' => bcrypt('123456')]);
         User::factory()->create(['first_name' => 'Lucas', 'last_name' => 'Otieno',  'username' => 'LOtieno', 'email' => 'lotieno@gmail.com', 'is_admin'=>'0', 'phone'=>'+254727074113', 'password' => bcrypt('123456')]);
-        //User::factory()->create(['first_name' => 'Nichole', 'last_name' => 'Amani',  'username' => 'NAmani', 'email' => 'namani@gmail.com', 'is_admin'=>'0', 'phone'=>'+254727074114', 'password' => bcrypt('123456')]);
+        User::factory()->create(['first_name' => 'Nichole', 'last_name' => 'Amani',  'username' => 'NAmani', 'email' => 'namani@gmail.com', 'is_admin'=>'0', 'phone'=>'+254727074114', 'password' => bcrypt('123456')]);
 
         //create countries
         Country::factory()->create(['name' => 'Kenya', 'initial' => 'KE', 'currency' => 'Kshs', 'timezone' => '+03:00', 'status' => 1]);
