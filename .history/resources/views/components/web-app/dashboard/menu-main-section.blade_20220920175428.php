@@ -1,0 +1,14 @@
+<ul class="no-list-style">
+    <li><a href="{{ route('web-app.dashboard.main-dashboard', $user_id) }}" class="{{ $current_route_name == 'web-app.dashboard.main-dashboard' ? 'user-profile-act' : '' }}"><i class="fal fa-chart-line"></i>Dashboard</a></li>
+    <li><a href="{{ route('web-app.dashboard.show-user-profile', $user_id) }}" class="{{ $current_route_name == 'web-app.dashboard.show-user-profile' ? 'user-profile-act' : '' }}"><i class="fal fa-user"></i>My Profile</a></li>
+    <li><a href="{{ route('web-app.dashboard.edit-user-profile', $user_id) }}" class="{{ $current_route_name == 'web-app.dashboard.edit-user-profile' ? 'user-profile-act' : '' }}"> <i class="fal fa-user-edit"></i> Edit profile</a></li>
+    <li><a href="dashboard-messages.html"><i class="fal fa-envelope"></i> Messages <span>3</span></a></li>
+    <li>
+        <a href="#" class="submenu-link"><i class="fal fa-plus"></i>More Settings</a>
+        <ul  class="no-list-style sub-menu-padding">
+            <li><a href="#"><i class="fal fa-key"></i> Change Password </a></li>
+            <li><a href="#"> <i class="fal fa-user"></i> Edit Profile Image</a></li>
+            <li><a href="#"><i class="fal fa-image"></i>Edit Profile Banner</a></li>
+        </ul>
+    </li>
+</ul>

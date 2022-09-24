@@ -1,0 +1,154 @@
+.form_errors {
+    float: left !important;  margin-top: -15px !important;
+}
+
+.form_errors-tinymice {
+    float: left !important;  margin-top: 5px !important;
+}
+
+.form_errors-select {
+    float: left !important;  margin-top: -5px !important;
+}
+
+.error_colors, .error {
+    color: #dc3545 !important;
+    font-size: 13px !important;
+    padding-top: -10px !important;
+}
+
+/* This is is then flashbox div CSS */
+#fixed-flash-box {
+    position: fixed;
+    width: 500px;  height: 50px;
+    top: 0; left: 50%; padding-top: 7px !important;
+    margin-top: 10px; /* Negative half of height. */
+    margin-left: -250px; /* Negative half of width. */
+    z-index: 1000;
+}
+
+/* This is is then jquery_nofications div CSS */
+#jquery_nofications_wrapper {
+    position: fixed;
+    width: 500px;  height: 50px;
+    top: 0; left: 50%; padding-top: 7px !important;
+    margin-top: 10px; /* Negative half of height. */
+    margin-left: -250px; /* Negative half of width. */
+    z-index: 1200;
+}
+
+
+ol, ul {
+  padding-left: 0rem !important;
+}
+
+
+.custom_button_wrapper {
+  display: block;
+  border-bottom: 1px solid #e7e7ed;
+  padding: 10px;
+  text-align: left;
+  font-size: 11px;
+  color: #7d93b2;
+  font-weight: 600;
+}
+
+.custom_submit_buttons {
+	background: none;
+	color: #4DB7FE;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+
+.custom_submit_buttons_inner {
+	background: none;
+	color: #ffffff;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+a.custom_submit_buttons_inner i{
+	color: #ffffff !important;
+}
+
+.custom_submit_buttons_inner:hover span {
+	color: #888DA0 !important;
+}
+
+.custom_submit_buttons_published {
+	background: red;
+	color: #ffffff;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.custom_submit_buttons_inner:hover i {
+	color: #4DB7FE !important;
+}
+
+.general-btn:hover, a.general-btn:hover {
+  color: #4DB7FE !important;
+  cursor: pointer !important;
+}
+
+
+.logout_link {
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+.logout_link button {
+  border:none !important; background-color: transparent !important;
+}
+
+.logout_link span{
+  color: #ffffff !important;
+}
+
+.logout_link span:hover{
+  color: #4DB7FE !important;
+}
+
+a.normal_link, .reviews-count-color{
+  color: #ffffff !important;
+}
+
+.reviews-count-color-dark{
+  color: #666666 !important;
+}
+
+a.normal_link:hover, .reviews-count-color:hover, .reviews-count-color-dark:hover {
+  color: #4DB7FE !important;
+}
+
+a.dashboard_link {
+  color: #ffffff;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+h3.menu-headings {
+  padding-top: 10px !important; color: #384f95 !important;
+}
+
+a.dashboard_link:hover, .dashboard-act-link {
+  color: #4DB7FE !important;
+}
+
+.dashboard-header-stats-wrap{
+  width: 750px !important;
+}
+
+.sub-menu-padding {
+  padding-left: 20px !important;
+}
