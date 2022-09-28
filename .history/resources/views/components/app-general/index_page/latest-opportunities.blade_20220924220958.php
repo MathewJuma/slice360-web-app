@@ -149,10 +149,10 @@
                         </div>
                         <div class="listing_carditem_footer fl-wrap">
                             <a class="listing-item-category-wrap" href="/opportunities?interest=&category_id={{ $category_details->id }}&country_id=All+Locations">
-                                <div class="listing-item-category color2-bg">
-                                    <i class="fal fa-list-alt"></i>
+                                <div class="listing-item-category red-bg">
+                                    <i class="fal fa-university"></i>
                                 </div>
-                                <span class="opportunity_category_name_banner" style="color: #ffffff;">{{ $category_details->name }}</span>
+                                <span>{{ $category_details->name }}</span>
                             </a>
                             <div class="price-level geodir-category_price">
                                 <span class="price-level-item" data-pricerating="2"></span>

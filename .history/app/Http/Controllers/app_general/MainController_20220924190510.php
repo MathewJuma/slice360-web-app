@@ -53,7 +53,6 @@ class MainController extends Controller
 
         //all opportunities
         $all_opportunities = Opportunity::with(['opportunity_user', 'opportunity_country', 'opportunity_category', 'opportunity_banner_images', 'opportunity_other_images'])
-                                            ->whereRaw('funding_status != "funding closed"')
                                             ->whereRaw('is_published = "Yes"')
                                             ->latest()->filter(request(['tag', 'interest', 'country_id', 'category_id']))->get();
 

@@ -59,7 +59,7 @@ class MainController extends Controller
 
         //opportunities for statistics
         $statistics_opportunities = Opportunity::with(['opportunity_user', 'opportunity_country', 'opportunity_category', 'opportunity_banner_images', 'opportunity_other_images'])
-                                            ->whereRaw('funding_status = "funding closed"')
+                                            ->whereRaw('funding_status != "funding closed"')
                                             ->latest()->filter(request(['tag', 'interest', 'country_id', 'category_id']))->get();
 
         //popular opportunities

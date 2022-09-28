@@ -152,7 +152,7 @@
                                 <div class="listing-item-category color2-bg">
                                     <i class="fal fa-list-alt"></i>
                                 </div>
-                                <span class="opportunity_category_name_banner" style="color: #ffffff;">{{ $category_details->name }}</span>
+                                <span>{{ $category_details->name }}</span>
                             </a>
                             <div class="price-level geodir-category_price">
                                 <span class="price-level-item" data-pricerating="2"></span>

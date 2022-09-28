@@ -127,7 +127,7 @@
                             {{-- logic to show if opportunity is verified or not end --}}
                         </h1>
                         <div class="geodir-category-location fl-wrap">
-                            <a href="/opportunities?interest=&category_id=All+Categories&country_id={{ $opportunity_details->country_id }}">
+                            <a href="#">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <b>{{ $opportunity_details->city . ', ' .$opportunity_details->country_name }}</b>
                             </a>
@@ -154,11 +154,11 @@
                 </div>
             </div>
             <div class="list-single-header_bottom fl-wrap">
-                <a class="listing-item-category-wrap" href="/opportunities?interest=&category_id={{ $opportunity_details->category_id }}&country_id=All+Locations">
+                <a class="listing-item-category-wrap" href="#">
                     <div class="listing-item-category color2-bg">
                         <i class="fal fa-list-alt"></i>
                     </div>
-                    <span class="opportunity_category_name_banner" style="color: #ffffff;">{{ $opportunity_details->category_name }}</span>
+                    <span class="opportunity_category_name" style="color: #ffffff !important;">{{ $opportunity_details->category_name }}</span>
                 </a>
                 <div class="list-single-author">
                     <a href="{{ route('web-app.dashboard.show-user-profile', $opportunity_details->owner_id.'-'.Str::slug($opportunity_details->owner_name)) }}">
@@ -310,7 +310,7 @@
             <div class="breadcrumbs inline-breadcrumbs fl-wrap">
                 <a href="/index">Opportunites</a>
                 <a href="/opportunites">Listings</a>
-                <a href="/opportunities?interest=&category_id={{ $opportunity_details->category_id }}&country_id=All+Locations">{{ $opportunity_details->category_name}}</a>
+                <a href="/opportunities/{{ $opportunity_details->category_id }}">{{ $opportunity_details->category_name}}</a>
                 <span>{{ $opportunity_details->title }}</span>
             </div>
             <!--opportunity breadcrumb end -->
@@ -344,7 +344,7 @@
 
                                         </h1>
                                         <div class="geodir-category-location fl-wrap">
-                                            <a href="/opportunities?interest=&category_id=All+Categories&country_id={{ $opportunity_details->country_id }}">
+                                            <a href="#">
                                                 <i class="fas fa-map-marker-alt"></i>{{ $opportunity_details->city . ', ' .$opportunity_details->country_name  }}
                                             </a>
                                             {{-- show only if logged in --}}
@@ -370,7 +370,7 @@
                                 </div>
                             </div>
                             <div class="list-single-header_bottom fl-wrap">
-                                <a class="listing-item-category-wrap" href="/opportunities?interest=&category_id={{ $opportunity_details->category_id }}&country_id=All+Locations">
+                                <a class="listing-item-category-wrap" href="#">
                                     <div class="listing-item-category color2-bg">
                                         <i class="fal fa-list-alt"></i>
                                     </div>

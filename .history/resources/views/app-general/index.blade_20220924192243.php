@@ -19,7 +19,7 @@
                     <div class="swiper-wrapper">
 
                         {{-- loop through each opportunity --}}
-                        @foreach ($all_opportunities->take(15) as $opportunity)
+                        @foreach ($all_opportunities->take(15) as $opportunity )
                             <x-app-general.index_page.latest-opportunities :opportunity='$opportunity' :all_countries='$all_countries' :all_categories='$all_categories' />
                         @endforeach
                         {{-- loop through each opportunity end--}}
@@ -58,7 +58,7 @@
                                 <div class="bg"  data-bg="{{ asset('web_app/images/all/agriculture.jpg') }}"></div>
                                 <div class="d-gr-sec"></div>
                                 @if ($category->category_opportunities_count > 0)
-                                    <a href="/opportunities?interest=&category_id={{ $category->id }}&country_id=All+Locations#all_opportunities_wrapper" class="general-btn">
+                                    <a href="/opportunities?interest=&category_id={{ $category->id }}&country_id=All+Locations" class="general-btn">
                                 @else
                                     <a href="{{ route('app-general.home-page') }}#opportunities_categories">
                                 @endif

@@ -180,10 +180,8 @@ a.dashboard_link:hover, .dashboard-act-link {
 
 .opportunity_category_name_banner {
   color: #ffffff !important;
-  font-weight: bold !important;
 }
 
 .opportunity_category_name:hover, .opportunity_category_name_banner:hover {
   color: #4DB7FE !important;
-  font-weight: bold !important;
 }

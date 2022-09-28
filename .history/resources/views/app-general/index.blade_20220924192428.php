@@ -19,7 +19,7 @@
                     <div class="swiper-wrapper">
 
                         {{-- loop through each opportunity --}}
-                        @foreach ($all_opportunities->take(15) as $opportunity)
+                        @foreach ($all_opportunities->take(15) as $opportunity )
                             <x-app-general.index_page.latest-opportunities :opportunity='$opportunity' :all_countries='$all_countries' :all_categories='$all_categories' />
                         @endforeach
                         {{-- loop through each opportunity end--}}

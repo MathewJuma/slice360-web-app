@@ -81,7 +81,7 @@ class MainController extends Controller
         //$value_funded_opportunities = Opportunity::select('*')->whereRaw('amount_needed = amount_raised')->sum('amount_raised');
 
         //dd($popular_opportunities);
-        return view('app-general.index', compact(['all_countries', 'all_categories', 'all_opportunities', 'statistics_opportunities', 'popular_categories', 'popular_opportunities', 'new_monthly_visitors', 'testimonials']));
+        return view('app-general.index', compact(['all_countries', 'all_categories', 'all_opportunities', 'popular_categories', 'popular_opportunities', 'new_monthly_visitors', 'testimonials']));
     }
 
 

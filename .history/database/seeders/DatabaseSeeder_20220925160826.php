@@ -42,6 +42,6 @@ class DatabaseSeeder extends Seeder
         Category::factory()->create(['name' => 'Energy', 'category_note'=>'Do you have interest in energy? You are not alone! Explore and invest in your dream.', 'description' => 'Category for all energy opportunities', 'status' => '1']);
 
         //create opportunities
-        Opportunity::factory(100)->create();
+        Opportunity::factory(50)->create();
     }
 }

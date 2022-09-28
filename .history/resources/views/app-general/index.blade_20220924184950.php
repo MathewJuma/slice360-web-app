@@ -19,7 +19,7 @@
                     <div class="swiper-wrapper">
 
                         {{-- loop through each opportunity --}}
-                        @foreach ($all_opportunities->take(15) as $opportunity)
+                        @foreach ($all_opportunities->take(15) as $opportunity )
                             <x-app-general.index_page.latest-opportunities :opportunity='$opportunity' :all_countries='$all_countries' :all_categories='$all_categories' />
                         @endforeach
                         {{-- loop through each opportunity end--}}
@@ -39,8 +39,8 @@
     <div class="sec-circle fl-wrap"></div>
 
     <!--section :: popular categories -->
-    <section  class="gray-bg hidden-section particles-wrapper">
-        <div class="container" id="opportunities_categories">
+    <section  class="gray-bg hidden-section particles-wrapper" id="opportunities_categories">
+        <div class="container">
             <div class="section-title">
                 <h2>Explore Popular Categories</h2>
                 <div class="section-subtitle">Catalog of Opportunities</div>
@@ -57,21 +57,15 @@
                             <div class="listing-item-grid">
                                 <div class="bg"  data-bg="{{ asset('web_app/images/all/agriculture.jpg') }}"></div>
                                 <div class="d-gr-sec"></div>
-                                @if ($category->category_opportunities_count > 0)
-                                    <a href="/opportunities?interest=&category_id={{ $category->id }}&country_id=All+Locations#all_opportunities_wrapper" class="general-btn">
-                                @else
-                                    <a href="{{ route('app-general.home-page') }}#opportunities_categories">
-                                @endif
-                                        <div class="listing-counter color2-bg general-btn" style="font-weight: 700 !important;">
-                                            <span>{{ $category->category_opportunities_count }}</span>Opportunities
-                                        </div>
-                                    </a>
+                                <div class="listing-counter color2-bg" style="font-weight: 700 !important;">
+                                    <span>{{ $category->category_opportunities_count }}</span>Opportunities
+                                </div>
                                 <div class="listing-item-grid_title">
                                     <h3>
                                         @if ($category->category_opportunities_count > 0)
                                             <a href="/opportunities?interest=&category_id={{ $category->id }}&country_id=All+Locations">{{ $category->name }}</a>
                                         @else
-                                            <a href="{{ route('app-general.home-page') }}#opportunities_categories">{{ $category->name }}</a>
+                                            <a href="#">{{ $category->name }}</a>
                                         @endif
 
                                     </h3>
@@ -107,7 +101,7 @@
         <div class="overlay  op7"></div>
         <div class="container">
             <div class=" single-facts single-facts_2 fl-wrap">
-                <x-app-general.index_page.general-statistics :all_opportunities='$statistics_opportunities' :new_monthly_visitors='$new_monthly_visitors'  />
+                <x-app-general.index_page.general-statistics :all_opportunities='$all_opportunities' :new_monthly_visitors='$new_monthly_visitors'  />
             </div>
         </div>
     </section>

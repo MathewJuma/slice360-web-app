@@ -39,7 +39,7 @@ class MainController extends Controller
         $all_countries = $this->all_countries;
         $all_categories = $this->all_categories;
 
-        //all records are as of the year 2022
+        //all records are as of 2022
         $views_period = Period::since(Carbon::create(2022));
 
         //popular categories
@@ -57,11 +57,6 @@ class MainController extends Controller
                                             ->whereRaw('is_published = "Yes"')
                                             ->latest()->filter(request(['tag', 'interest', 'country_id', 'category_id']))->get();
 
-        //opportunities for statistics
-        $statistics_opportunities = Opportunity::with(['opportunity_user', 'opportunity_country', 'opportunity_category', 'opportunity_banner_images', 'opportunity_other_images'])
-                                            ->whereRaw('funding_status = "funding closed"')
-                                            ->latest()->filter(request(['tag', 'interest', 'country_id', 'category_id']))->get();
-
         //popular opportunities
         $popular_opportunities = (Opportunity::with(['opportunity_user', 'opportunity_country', 'opportunity_category', 'opportunity_banner_images', 'opportunity_other_images'])
                                             ->whereRaw('funding_status != "funding closed"')
@@ -75,13 +70,12 @@ class MainController extends Controller
         //testimonials
         $testimonials = UserTestimonial::with(['testimonial_user'])->latest()->take(10)->get();
 
-        //other possible custom queries
+        //custom queries
         //$new_monthly_opportunities = count(Opportunity::select('*')->whereMonth('created_at', Carbon::now()->month)->get());
         //$fully_funded_opportunities = count(Opportunity::select('*')->whereRaw('amount_needed = amount_raised')->get());
         //$value_funded_opportunities = Opportunity::select('*')->whereRaw('amount_needed = amount_raised')->sum('amount_raised');
-
         //dd($popular_opportunities);
-        return view('app-general.index', compact(['all_countries', 'all_categories', 'all_opportunities', 'statistics_opportunities', 'popular_categories', 'popular_opportunities', 'new_monthly_visitors', 'testimonials']));
+        return view('app-general.index', compact(['all_countries', 'all_categories', 'all_opportunities', 'popular_categories', 'popular_opportunities', 'new_monthly_visitors', 'testimonials']));
     }
 
 

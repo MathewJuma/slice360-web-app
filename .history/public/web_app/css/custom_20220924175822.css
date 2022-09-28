@@ -173,7 +173,7 @@ a.dashboard_link:hover, .dashboard-act-link {
   background: #4DB7FE !important;
 }
 
-.opportunity_category_name {
+a.opportunity_category_name {
   color: #566985 !important;
   font-weight: bold !important;
 }
@@ -183,7 +183,7 @@ a.dashboard_link:hover, .dashboard-act-link {
   font-weight: bold !important;
 }
 
-.opportunity_category_name:hover, .opportunity_category_name_banner:hover {
+a.opportunity_category_name:hover, .opportunity_category_name_banner:hover {
   color: #4DB7FE !important;
   font-weight: bold !important;
 }

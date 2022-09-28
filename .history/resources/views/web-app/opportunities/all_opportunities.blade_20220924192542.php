@@ -8,7 +8,7 @@
     <!-- section below hero -->
     <section class="gray-bg small-padding no-top-padding-sec mt-10" id="sec1">
         <!-- inner container -->
-        <div class="container"  id="all_opportunities_wrapper">
+        <div class="container">
             <!-- list-main-wrap-header-->
             <div class="list-main-wrap-header fl-wrap block_box no-vis-shadow no-bg-header fixed-listing-header" style="margin-bottom: 10px !important;">
                 <!-- list-main-wrap-title-->

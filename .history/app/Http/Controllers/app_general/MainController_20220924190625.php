@@ -44,8 +44,7 @@ class MainController extends Controller
 
         //popular categories
         $popular_categories = Category::withCount(['category_opportunities' => function ($query) {
-                                                                                                    $query->whereRaw('funding_status != "funding closed"')
-                                                                                                        ->whereRaw('is_published = "Yes"');
+                                                                                                    $query->whereRaw('is_published = "Yes"');
                                                                                                 }
                                                 ])
                                                 ->orderBy('category_opportunities_count', 'desc')
@@ -53,7 +52,6 @@ class MainController extends Controller
 
         //all opportunities
         $all_opportunities = Opportunity::with(['opportunity_user', 'opportunity_country', 'opportunity_category', 'opportunity_banner_images', 'opportunity_other_images'])
-                                            ->whereRaw('funding_status != "funding closed"')
                                             ->whereRaw('is_published = "Yes"')
                                             ->latest()->filter(request(['tag', 'interest', 'country_id', 'category_id']))->get();
 
@@ -64,7 +62,6 @@ class MainController extends Controller
 
         //popular opportunities
         $popular_opportunities = (Opportunity::with(['opportunity_user', 'opportunity_country', 'opportunity_category', 'opportunity_banner_images', 'opportunity_other_images'])
-                                            ->whereRaw('funding_status != "funding closed"')
                                             ->whereRaw('is_published = "Yes"')
                                             ->orderByViews('desc', $views_period)->orderByUniqueViews('desc', $views_period)
                                             ->latest()->take(50)->get())->where('views_count', '!=', '0')->paginate(8, '', '', 'popular-opportunities');

@@ -8,7 +8,7 @@
     <!-- section below hero -->
     <section class="gray-bg small-padding no-top-padding-sec mt-10" id="sec1">
         <!-- inner container -->
-        <div class="container"  id="all_opportunities_wrapper">
+        <div class="container">
             <!-- list-main-wrap-header-->
             <div class="list-main-wrap-header fl-wrap block_box no-vis-shadow no-bg-header fixed-listing-header" style="margin-bottom: 10px !important;">
                 <!-- list-main-wrap-title-->
@@ -47,9 +47,9 @@
             <!-- list-main-wrap-header end-->
 
             <!-- actual listing content -->
-            <div class="fl-wrap" >
+            <div class="fl-wrap">
                 <!-- listing-item-container -->
-                <div class="listing-item-container init-grid-items fl-wrap nocolumn-lic three-columns-grid" style="border:0px solid red; margin-top: -25px !important; margin-bottom: -10px !important;">
+                <div class="listing-item-container init-grid-items fl-wrap nocolumn-lic three-columns-grid" id="all_opportunities_wrapper" style="border:0px solid red; margin-top: -25px !important; margin-bottom: -10px !important;">
 
                     @if (count($all_opportunities) == 0)
                         <div class="section-title" style="padding-top: 50px !important;">

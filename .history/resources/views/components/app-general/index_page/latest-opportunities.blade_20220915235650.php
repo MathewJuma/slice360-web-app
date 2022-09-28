@@ -122,17 +122,7 @@
                         <div class="geodir-category-opt_title">
                             <h4>
                                 <a href="/opportunities/{{ $opportunity->id }}-{{ Str::slug($opportunity->title) }}">{{ $opportunity->title }}</a>
-                                {{-- logic to show if opportunity is verified or not --}}
-                                @if ($opportunity->is_verified === "Yes")
-                                    <span class="verified-badge tolt" data-microtip-position="bottom" data-tooltip="Slice360 Verified">
-                                        <i class="fal fa-check"></i>
-                                    </span>
-                                @else
-                                    <span class="danger-badge tolt" data-microtip-position="bottom" data-tooltip="Not Verified">
-                                        <i class="fal fa-exclamation"></i>
-                                    </span>
-                                @endif
-                                {{-- logic to show if opportunity is verified or not end --}}
+                                <span class="verified-badge"><i class="fal fa-check"></i></span>
                             </h4>
                             <div class="geodir-category-location">
                                 <a href="/opportunities?interest=&category_id=All+Categories&country_id={{ $country_details->id }}" >
@@ -149,10 +139,10 @@
                         </div>
                         <div class="listing_carditem_footer fl-wrap">
                             <a class="listing-item-category-wrap" href="/opportunities?interest=&category_id={{ $category_details->id }}&country_id=All+Locations">
-                                <div class="listing-item-category color2-bg">
-                                    <i class="fal fa-list-alt"></i>
+                                <div class="listing-item-category red-bg">
+                                    <i class="fal fa-university"></i>
                                 </div>
-                                <span class="opportunity_category_name_banner" style="color: #ffffff;">{{ $category_details->name }}</span>
+                                <span>{{ $category_details->name }}</span>
                             </a>
                             <div class="price-level geodir-category_price">
                                 <span class="price-level-item" data-pricerating="2"></span>

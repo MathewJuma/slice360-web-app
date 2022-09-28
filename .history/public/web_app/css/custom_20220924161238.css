@@ -169,21 +169,18 @@ a.dashboard_link:hover, .dashboard-act-link {
   margin-top:7px !important; width: 70px !important; height: 15px; border-radius: 5px !important; font-size: 0.5rem;
 }
 
+.opportunity_category_name {
+  color: #566985 !important;
+}
+
+.opportunity_category_name_banner{
+  color: #ffffff !important;
+}
+
 .listing-item-category:hover {
   background: #4DB7FE !important;
 }
 
-.opportunity_category_name {
-  color: #566985 !important;
-  font-weight: bold !important;
-}
-
-.opportunity_category_name_banner {
-  color: #ffffff !important;
-  font-weight: bold !important;
-}
-
-.opportunity_category_name:hover, .opportunity_category_name_banner:hover {
+.opportunity_category_name:hover {
   color: #4DB7FE !important;
-  font-weight: bold !important;
 }

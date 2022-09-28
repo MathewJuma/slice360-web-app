@@ -53,13 +53,14 @@ class MainController extends Controller
 
         //all opportunities
         $all_opportunities = Opportunity::with(['opportunity_user', 'opportunity_country', 'opportunity_category', 'opportunity_banner_images', 'opportunity_other_images'])
-                                            ->whereRaw('funding_status != "funding closed"')
+                                            //->whereRaw('funding_status != "funding closed"')
                                             ->whereRaw('is_published = "Yes"')
                                             ->latest()->filter(request(['tag', 'interest', 'country_id', 'category_id']))->get();
 
         //opportunities for statistics
-        $statistics_opportunities = Opportunity::with(['opportunity_user', 'opportunity_country', 'opportunity_category', 'opportunity_banner_images', 'opportunity_other_images'])
-                                            ->whereRaw('funding_status = "funding closed"')
+        $all_opportunities = Opportunity::with(['opportunity_user', 'opportunity_country', 'opportunity_category', 'opportunity_banner_images', 'opportunity_other_images'])
+                                            //->whereRaw('funding_status != "funding closed"')
+                                            ->whereRaw('is_published = "Yes"')
                                             ->latest()->filter(request(['tag', 'interest', 'country_id', 'category_id']))->get();
 
         //popular opportunities
@@ -81,7 +82,7 @@ class MainController extends Controller
         //$value_funded_opportunities = Opportunity::select('*')->whereRaw('amount_needed = amount_raised')->sum('amount_raised');
 
         //dd($popular_opportunities);
-        return view('app-general.index', compact(['all_countries', 'all_categories', 'all_opportunities', 'statistics_opportunities', 'popular_categories', 'popular_opportunities', 'new_monthly_visitors', 'testimonials']));
+        return view('app-general.index', compact(['all_countries', 'all_categories', 'all_opportunities', 'popular_categories', 'popular_opportunities', 'new_monthly_visitors', 'testimonials']));
     }
 
 

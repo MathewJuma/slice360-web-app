@@ -127,7 +127,7 @@
                             {{-- logic to show if opportunity is verified or not end --}}
                         </h1>
                         <div class="geodir-category-location fl-wrap">
-                            <a href="/opportunities?interest=&category_id=All+Categories&country_id={{ $opportunity_details->country_id }}">
+                            <a href="#">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <b>{{ $opportunity_details->city . ', ' .$opportunity_details->country_name }}</b>
                             </a>
@@ -344,7 +344,7 @@
 
                                         </h1>
                                         <div class="geodir-category-location fl-wrap">
-                                            <a href="/opportunities?interest=&category_id=All+Categories&country_id={{ $opportunity_details->country_id }}">
+                                            <a href="#">
                                                 <i class="fas fa-map-marker-alt"></i>{{ $opportunity_details->city . ', ' .$opportunity_details->country_name  }}
                                             </a>
                                             {{-- show only if logged in --}}
