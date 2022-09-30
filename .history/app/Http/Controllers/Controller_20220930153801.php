@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Wink\WinkPost;
+//use Illuminate\Support\Facades\View;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+
+class Controller extends BaseController
+{
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function __construct()
+    {
+        $three_blog_posts = WinkPost::orderBy('publish_date', 'DESC')->take(3)->get();
+
+        dd(three_blog_posts);
+
+        View::share('three_blog_posts', $three_blog_posts);
+    }
+}
