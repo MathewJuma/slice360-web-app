@@ -1,0 +1,3 @@
+{{ dd($all_opportunity) }}
+
+
