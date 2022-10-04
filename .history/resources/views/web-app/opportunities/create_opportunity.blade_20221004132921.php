@@ -117,36 +117,36 @@
         <div class="profile-edit-container fl-wrap block_box">
             <div class="custom-form">
                 <!-- Checkboxes -->
-                <ul class="fl-wrap filter-tags no-list-style ds-tg" style="margin-bottom: -15px !important; margin-left: 20px !important;" id="opportunity_seeking">
-                    <li class="opportunity_seeking_list">
+                <ul class="fl-wrap filter-tags no-list-style ds-tg" style="margin-bottom: -15px !important; margin-left: 30px !important;" id="opportunity_seeking">
+                    <li style="padding-left: 20px !important; padding-right: 40px !important; width: 20% !important;">
                         <input id="investors" class="opportunity_seeking" type="checkbox" value="Investors" name="opportunity_seeking[]">
                         <label for="investors">Investors</label>
                     </li>
-                    <li class="opportunity_seeking_list">
+                    <li style="padding-left: 20px !important; padding-right: 40px !important; width: 20% !important;">
                         <input id="donors" class="opportunity_seeking" type="checkbox" value="Donors" name="opportunity_seeking[]">
                         <label for="donors">Donors</label>
                     </li>
-                    <li class="opportunity_seeking_list">
+                    <li style="padding-left: 20px !important; padding-right: 40px !important; width: 20% !important;">
                         <input id="lenders" class="opportunity_seeking" type="checkbox" value="Lenders" name="opportunity_seeking[]">
                         <label for="lenders">Lenders</label>
                     </li>
-                    <li class="opportunity_seeking_list">
+                    <li style="padding-left: 20px !important; padding-right: 40px !important; width: 20% !important;">
                         <input id="lenders" class="opportunity_seeking" type="checkbox" value="Mentors" name="opportunity_seeking[]">
                         <label for="lenders">Mentors</label>
                     </li>
-                    <li class="opportunity_seeking_list">
+                    <li style="padding-left: 20px !important; padding-right: 40px !important; width: 20% !important;">
                         <input id="incubation" class="opportunity_seeking" type="checkbox" value="Incubation" name="opportunity_seeking[]">
                         <label for="incubation">Incubation</label>
                     </li>
-                    <li class="opportunity_seeking_list">
+                    <li style="padding-left: 20px !important; padding-right: 40px !important; width: 20% !important;">
                         <input id="acceleration" class="opportunity_seeking" type="checkbox" value="Acceleration" name="opportunity_seeking[]">
                         <label for="acceleration">Acceleration</label>
                     </li>
-                    <li class="opportunity_seeking_list">
+                    <li style="padding-left: 20px !important; padding-right: 40px !important; width: 20% !important;">
                         <input id="acceleration" class="opportunity_seeking" type="checkbox" value="Training" name="opportunity_seeking[]">
                         <label for="acceleration">Training</label>
                     </li>
-                    <li class="opportunity_seeking_list">
+                    <li style="padding-left: 20px !important; padding-right: 40px !important; width: 20% !important;">
                         <input id="others" class="opportunity_seeking" type="checkbox" value="Others" name="opportunity_seeking[]">
                         <label for="others">Others</label>
                     </li>

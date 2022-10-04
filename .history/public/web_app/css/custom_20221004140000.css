@@ -213,9 +213,7 @@ div.blog-body > blockquote {
 }
 
 .opportunity_seeking_list {
-  padding-left: 20px !important;
-  padding-right: 40px !important;
-  min-width: 23% !important;
+  padding-left: 20px !important; padding-right: 40px !important; width: 23% !important;
 }
 
 .opportunity_seeking_error {

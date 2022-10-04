@@ -212,15 +212,10 @@ div.blog-body > blockquote {
   font-family: Merriweather-Light !important;
 }
 
-.opportunity_seeking_list {
-  padding-left: 20px !important;
-  padding-right: 40px !important;
-  min-width: 23% !important;
-}
-
 .opportunity_seeking_error {
   text-align: left !important;
-  margin-top: 65px !important;
+  padding-top: 40px !important;
   margin-left: 40px !important;
   display: none;
 }
+
