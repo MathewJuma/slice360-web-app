@@ -10,9 +10,6 @@ class WinkPost extends AbstractWinkPost
 {
     use HasFactory;
 
-
-    protected $connection = 'slice360_blog';
-
     /**
      * The post comments.
      *
